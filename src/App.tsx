@@ -1,20 +1,26 @@
-import React from "react";
-import apiData from "./api";
-import PersonInfo from "./PersonInfo";
+import React, { useState } from 'react';
+
+import apiData from './api';
+import { PersonInfo } from './components/PersonInfo';
+import { useFetch } from './hooks/useFetch';
+
+import type { Contact } from './types';
 
 function App() {
-  const [data, setData] = React.useState([]);
-  const [selected, setSelected] = React.useState([]);
-
-  //  TODO fetch contacts using apiData function, handle loading and error states
+  const [selected, setSelected] = useState<Contact[]>([]);
+  const { data, status, loadMore } = useFetch<Contact>(apiData);
 
   return (
-    <div className="App">
-      <div className="selected">Selected contacts: {selected.length}</div>
-      <div className="list">
+    <div className='App'>
+      <div className='selected'>Selected contacts: {selected.length}</div>
+      <div className='list'>
         {data.map((personInfo) => (
-          // @ts-ignore
-          <PersonInfo key={personInfo.id} data={personInfo} />
+          <PersonInfo
+            key={personInfo.id}
+            data={personInfo}
+            selected={selected.some((item) => item.id === personInfo.id)}
+            onClick={() => setSelected(selected)}
+          />
         ))}
       </div>
     </div>
