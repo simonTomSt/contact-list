@@ -1,0 +1,43 @@
+.loader {
+  display: inline-block;
+}
+
+.loader:after {
+  content: ' ';
+  display: block;
+
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #f25240;
+  border-color: #f25240 transparent #f25240 transparent;
+  animation: dual-ring 1.2s linear infinite;
+}
+
+.small {
+  width: 30px;
+  height: 30px;
+}
+
+.small:after {
+  width: 12px;
+  height: 12px;
+}
+
+.large {
+  width: 80px;
+  height: 80px;
+}
+
+.large:after {
+  width: 64px;
+  height: 64px;
+}
+
+@keyframes dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
