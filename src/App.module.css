@@ -1,0 +1,54 @@
+.app {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  margin: 20px 0;
+}
+
+.selected {
+  color: #333333;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 10px 20px 0 0;
+}
+
+.list {
+  height: 80vh !important;
+  max-height: 800px !important;
+  width: 400px !important;
+}
+
+.more {
+  color: #fff;
+  background-color: #e74c3c;
+  border: 0;
+  padding: 10px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.more:hover {
+  background-color: #f25240;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bottom {
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.try-again {
+  cursor: pointer;
+  text-decoration: underline;
+}
